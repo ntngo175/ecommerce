@@ -63,7 +63,7 @@ class ProductSerializer(serializers.ModelSerializer):
             'specification',
             'size',
             'product_rating',
-            # 'rating_count',
+            'rating_count',
             'pid',
             'slug',
             'date'
@@ -146,6 +146,7 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = "__all__"
+        
     
     def __init__(self, *args, **kwargs):
         super(ReviewSerializer, self).__init__(*args, **kwargs)

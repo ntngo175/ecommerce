@@ -63,8 +63,8 @@ class Product(models.Model):
         product_rating = Review.objects.filter(product=self).aggregate(avg_rating=models.Avg('rating'))
         return product_rating['avg_rating']
     
-    # def rating_count(self):
-    #     return Review.objects.filter(product=self)
+    def rating_count(self):
+        return Review.objects.filter(product=self).count()
     
     def gallery(self):
         return Gallery.objects.filter(product=self)
